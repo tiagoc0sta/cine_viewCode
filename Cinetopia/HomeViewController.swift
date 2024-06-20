@@ -9,13 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private lazy var label: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Hello, World!"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 24.0, weight: .bold)
-        return label
+    private lazy var logoImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage.logo)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
+    
+    private lazy var coupleImageView: UIImageView = {
+        let imageView = UIImageView(image: .couple)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
     }()
     
     override func viewDidLoad() {
@@ -27,13 +32,17 @@ class HomeViewController: UIViewController {
     }
     
     private func addSubviews() {
-        view.addSubview(label)
+        view.addSubview(logoImageView)
+        view.addSubview(coupleImageView)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            label.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            coupleImageView.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 32),
+            coupleImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
