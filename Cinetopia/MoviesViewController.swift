@@ -12,8 +12,18 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .background
-
+        setupNavigationBar()
         // Do any additional setup after loading the view.
+    }
+    
+    private func setupNavigationBar() {
+        title = "Popular movies"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.white
+        ]
+       
+        navigationItem.setHidesBackButton(true, animated: true) //delete back button
     }
     
 
