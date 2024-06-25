@@ -13,6 +13,8 @@
 		480C2CE52AF089AA00E8C875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 480C2CE42AF089AA00E8C875 /* Assets.xcassets */; };
 		480C2CE82AF089AA00E8C875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480C2CE62AF089AA00E8C875 /* LaunchScreen.storyboard */; };
 		F02991622C25CE3500CCFAFF /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02991612C25CE3500CCFAFF /* MoviesViewController.swift */; };
+		F05993CE2C2AFF2500FA1D3B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */; };
+		F08285BB2C29B25B00373125 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08285BA2C29B25B00373125 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		480C2CE72AF089AA00E8C875 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		480C2CE92AF089AA00E8C875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F02991612C25CE3500CCFAFF /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		F08285BA2C29B25B00373125 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		480C2CDA2AF089A900E8C875 /* Cinetopia */ = {
 			isa = PBXGroup;
 			children = (
+				F05993CC2C2AFEC800FA1D3B /* Cells */,
+				F08285B92C29B24500373125 /* Models */,
+				F08285B82C29B23000373125 /* ViewControllers */,
 				480C2CDB2AF089A900E8C875 /* AppDelegate.swift */,
 				480C2CDD2AF089A900E8C875 /* SceneDelegate.swift */,
-				480C2CDF2AF089A900E8C875 /* HomeViewController.swift */,
 				480C2CE42AF089AA00E8C875 /* Assets.xcassets */,
 				480C2CE62AF089AA00E8C875 /* LaunchScreen.storyboard */,
 				480C2CE92AF089AA00E8C875 /* Info.plist */,
-				F02991612C25CE3500CCFAFF /* MoviesViewController.swift */,
 			);
 			path = Cinetopia;
+			sourceTree = "<group>";
+		};
+		F05993CC2C2AFEC800FA1D3B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F08285B82C29B23000373125 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				480C2CDF2AF089A900E8C875 /* HomeViewController.swift */,
+				F02991612C25CE3500CCFAFF /* MoviesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F08285B92C29B24500373125 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F08285BA2C29B25B00373125 /* Movie.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +169,10 @@
 			files = (
 				480C2CE02AF089A900E8C875 /* HomeViewController.swift in Sources */,
 				480C2CDC2AF089A900E8C875 /* AppDelegate.swift in Sources */,
+				F05993CE2C2AFF2500FA1D3B /* MovieTableViewCell.swift in Sources */,
 				480C2CDE2AF089A900E8C875 /* SceneDelegate.swift in Sources */,
 				F02991622C25CE3500CCFAFF /* MoviesViewController.swift in Sources */,
+				F08285BB2C29B25B00373125 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

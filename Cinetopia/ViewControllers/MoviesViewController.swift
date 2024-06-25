@@ -9,9 +9,9 @@ import UIKit
 
 class MoviesViewController: UIViewController {
         
-    var names: [String] = [
+    /*var names: [String] = [
         "Ana", "Gionvana", "Lucas", "Daniel"
-    ]
+    ]*/
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -19,7 +19,7 @@ class MoviesViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "nameCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "movieCell")
         return tableView
     }()
 
@@ -72,13 +72,14 @@ class MoviesViewController: UIViewController {
 //Separated the code of creating the table
 extension MoviesViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+        return movies.count  //movies array from Movie file
     }
     
+    //creating table cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
         var configuration = cell.defaultContentConfiguration()
-        configuration.text = names[indexPath.row]
+        configuration.text = movies[indexPath.row].title
         configuration.textProperties.color = .white
         cell.contentConfiguration = configuration
         cell.backgroundColor = .clear
