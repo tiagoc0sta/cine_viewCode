@@ -9,9 +9,8 @@ import UIKit
 
 class MoviesViewController: UIViewController {
         
-    /*var names: [String] = [
-        "Ana", "Gionvana", "Lucas", "Daniel"
-    ]*/
+    private var filteredMovies: [Movie] = []
+    private var isSearchActive: Bool = false
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -19,9 +18,19 @@ class MoviesViewController: UIViewController {
         tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "movieCell")
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "movieCell")
         return tableView
     }()
+    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.placeholder = "Search"
+        searchBar.searchTextField.backgroundColor = .white
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +54,7 @@ class MoviesViewController: UIViewController {
         ])
     }
     
+  
     
     private func setupNavigationBar() {
         title = "Popular movies"
@@ -54,40 +64,56 @@ class MoviesViewController: UIViewController {
         ]
        
         navigationItem.setHidesBackButton(true, animated: true) //delete back button
+        navigationItem.titleView = searchBar
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
 //Separated the code of creating the table
 extension MoviesViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count  //movies array from Movie file
+        return isSearchActive ? filteredMovies.count : movies.count //movies array from Movie file
     }
     
     //creating table cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
-        var configuration = cell.defaultContentConfiguration()
-        configuration.text = movies[indexPath.row].title
-        configuration.textProperties.color = .white
-        cell.contentConfiguration = configuration
-        cell.backgroundColor = .clear
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath)
+            as? MovieTableViewCell {
+            let movie = isSearchActive ? filteredMovies[indexPath.row] : movies[indexPath.row]
+            cell.configureCell(movie: movie)
+            cell.selectionStyle = .none
+            return cell
+        }
+        return UITableViewCell()
     }
     
+    //navigate to movieDetailsViewController
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let movie = isSearchActive ? filteredMovies[indexPath.row] : movies[indexPath.row]
+        let detailsVC = MovieDetailsViewController(movie: movie)
+        
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
+    }
+    
+}
+
+
+extension MoviesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            isSearchActive = false
+        } else {
+            isSearchActive = true
+            filteredMovies = movies.filter({ movie in
+                movie.title.lowercased().contains(searchText.lowercased())
+            })
+        }
+        tableView.reloadData()
+    }
 }
