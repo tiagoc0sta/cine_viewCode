@@ -16,6 +16,7 @@
 		F05993CE2C2AFF2500FA1D3B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */; };
 		F06873212C2C4BD7000E69E7 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06873202C2C4BD7000E69E7 /* MovieDetailsViewController.swift */; };
 		F08285BB2C29B25B00373125 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08285BA2C29B25B00373125 /* Movie.swift */; };
+		F0EEB9572C2DC72500297433 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEB9562C2DC72500297433 /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		F06873202C2C4BD7000E69E7 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		F08285BA2C29B25B00373125 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F0EEB9562C2DC72500297433 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		480C2CDA2AF089A900E8C875 /* Cinetopia */ = {
 			isa = PBXGroup;
 			children = (
+				F0EEB9552C2DC71200297433 /* Services */,
 				F05993CC2C2AFEC800FA1D3B /* Cells */,
 				F08285B92C29B24500373125 /* Models */,
 				F08285B82C29B23000373125 /* ViewControllers */,
@@ -98,6 +101,14 @@
 				F08285BA2C29B25B00373125 /* Movie.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F0EEB9552C2DC71200297433 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F0EEB9562C2DC72500297433 /* MovieService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				F06873212C2C4BD7000E69E7 /* MovieDetailsViewController.swift in Sources */,
 				480C2CDE2AF089A900E8C875 /* SceneDelegate.swift in Sources */,
 				F02991622C25CE3500CCFAFF /* MoviesViewController.swift in Sources */,
+				F0EEB9572C2DC72500297433 /* MovieService.swift in Sources */,
 				F08285BB2C29B25B00373125 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
