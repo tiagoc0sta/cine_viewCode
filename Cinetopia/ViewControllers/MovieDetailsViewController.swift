@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieDetailsViewController: UIViewController {
     
@@ -27,13 +28,15 @@ class MovieDetailsViewController: UIViewController {
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.layer.cornerRadius = 32.0
         imgView.layer.masksToBounds = true
+        let url = URL(string: movie.image)
+        imgView.kf.setImage(with: url)
         return imgView
     }()
     
     private lazy var userRatingLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Classificação dos usuários: \(movie.rate)"
+        label.text = "User rating: \(movie.rate)"
         label.numberOfLines = 0
         label.textColor = .white
         label.font = .systemFont(ofSize: 16.0, weight: .bold)

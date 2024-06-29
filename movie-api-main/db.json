@@ -6,23 +6,23 @@
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/avatar.jpg?raw=true",
             "synopsis": "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
             "rate": 7.9,
-            "releaseDate": "Dec/18/2009"
+            "releaseDate": "12/18/2009"
         },
         {
             "id": 2,
-            "title": "Vingadores: Ultimato",
+            "title": "Ultimate Avengers",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/vingadores-ultimato.jpg?raw=true",
             "synopsis": "After the devastating events of Avengers: Infinity War, the universe is in ruins. With the help of allies, the Avengers assemble once more in order to undo Thanos' actions and restore order.",
             "rate": 8.4,
-            "releaseDate": "Apr/25/2019"
+            "releaseDate": "04/25/2019"
         },
         {
             "id": 3,
-            "title": "Avatar: O Caminho da Água",
+            "title": "Avatar: The Way of Water",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/avatar-2.jpg?raw=true",
             "synopsis": "Following the events of Avengers: Infinity War, the universe is in ruins. With the help of allies, the Avengers assemble once more in order to undo Thanos' actions and restore order.",
             "rate": 7.6,
-            "releaseDate": "Dec/16/2022"
+            "releaseDate": "12/16/2022"
         },
         {
             "id": 4,
@@ -30,63 +30,63 @@
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/titanic.jpg?raw=true",
             "synopsis": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
             "rate": 7.9,
-            "releaseDate": "Dec/19/1997"
+            "releaseDate": "12/19/1997"
         },
         {
             "id": 5,
-            "title": "Star Wars: O Despertar da Força",
+            "title": "Star Wars: Episode VII The Force Awakens",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/star-wars-despertar-da-forca.jpg?raw=true",
             "synopsis": "Three decades after the defeat of the Empire, a new threat arises in the First Order. Finn and Rey are caught up in the Resistance's search for Luke Skywalker.",
             "rate": 7.8,
-            "releaseDate": "Dec/18/2015"
+            "releaseDate": "12/18/2015"
         },
         {
             "id": 6,
-            "title": "Vingadores: Guerra Infinita",
+            "title": "Avengers: Infinity War",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/vingadores-guerra-infinita.jpg?raw=true",
             "synopsis": "The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Thanos before his blitz of devastation and ruin puts an end to the universe.",
             "rate": 8.4,
-            "releaseDate": "Apr/26/2018"
+            "releaseDate": "04/26/2018"
         },
         {
             "id": 7,
-            "title": "Homem Aranha: Sem Volta para Casa",
+            "title": "Spider-Man: No Way Home",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/homem-aranha-sem-volta-para-casa.jpg?raw=true",
-           "synopsis": "After defeating Owen Shaw, Dominic Toretto and his crew must face a new threat: Owen's brother, Deckard Shaw, who is out for revenge.",
+            "synopsis": "With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man.",
             "rate": 8.2,
-            "releaseDate": "Dec/15/2021"
+            "releaseDate": "12/15/2021"
         },
         {
             "id": 8,
-            "title": "Jurassic World: O Mundo dos Dinossauros",
+            "title": "Jurassic World",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/jurassic-world.jpg?raw=true",
-           "synopsis": "A new theme park, built on the original site of Jurassic Park, creates a genetically modified dinosaur, the Indominus Rex, which escapes and goes on a killing spree.",
+            "synopsis": " new theme park, built on the original site of Jurassic Park, creates a genetically modified dinosaur, the Indominus Rex, which escapes and goes on a killing spree.",
             "rate": 6.9,
-             "releaseDate": "Jun/12/2015"
+            "releaseDate": "06/12/2015"
         },
         {
             "id": 9,
-            "title": "O Rei Leão",
+            "title": "The Lion King",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/rei-leao.jpg?raw=true",
             "synopsis": "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery.",
             "rate": 6.8,
-            "releaseDate": "Jul/18/2019"
+            "releaseDate": "07/18/2019"
         },
         {
             "id": 10,
-            "title": "Os Vingadores",
+            "title": "The Avengers",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/os-vingadores.jpg?raw=true",
             "synopsis": "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop an alien army from enslaving humanity.",
             "rate": 8.0,
-            "releaseDate": "Apr/27/2012"
+            "releaseDate": "04/27/2012"
         },
         {
             "id": 11,
-            "title": "Velozes & Furiosos 7",
+            "title": "Furious 7",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/velozes-furiosos-7.jpg?raw=true",
             "synopsis": "After defeating Owen Shaw, Dominic Toretto and his crew must face a new threat: Owen's brother, Deckard Shaw, who is out for revenge.",
             "rate": 7.1,
-            "releaseDate": "Apr/02/2015"
+            "releaseDate": "04/02/2015"
         },
         {
             "id": 12,
@@ -94,7 +94,7 @@
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/top-gun.jpg?raw=true",
             "synopsis": "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
             "rate": 8.3,
-            "releaseDate": "May/26/2022"
+            "releaseDate": "05/26/2022"
         },
         {
             "id": 13,
@@ -102,63 +102,63 @@
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/frozen-2.jpg?raw=true",
             "synopsis": "Anna, Elsa, Kristoff, and Olaf venture far into the forest to learn the truth about an ancient mystery of their kingdom.",
             "rate": 6.8,
-            "releaseDate": "Jan/02/2020"
+            "releaseDate": "01/02/2020"
         },
         {
             "id": 14,
             "title": "Barbie",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/barbie.jpg?raw=true",
-            "synopsis": "A plumber named Mario must save his brother Luigi from the clutches of the Koopa King, Bowser. To do so, he enlists the help of the Mushroom Kingdom's Princess Peach and his friends Toad and Donkey Kong.",
+            "synopsis": "Barbie embarks on a magical adventure to save her kingdom from an evil sorceress, learning the power of friendship and courage along the way.",
             "rate": 7.1,
-            "releaseDate": "Jul/20/2023"
+            "releaseDate": "07/20/2023"
         },
         {
             "id": 15,
-            "title": "Vingadores: Era de Ultron",
+            "title": "Avengers: Age of Ultron",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/vingadores-era-de-ultron.jpg?raw=true",
             "synopsis": "When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program, things go terribly wrong, and Earth's mightiest heroes are put to the ultimate test as the fate of the planet hangs in the balance.",
             "rate": 7.3,
-            "releaseDate": "Apr/23/2015"
+            "releaseDate": "04/23/2015"
         },
         {
             "id": 16,
-            "title": "Super Mario Bros. O Filme",
+            "title": "The Super Mario Bros. Movie",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/mario-bros.jpg?raw=true",
             "synopsis": "A plumber named Mario must save his brother Luigi from the clutches of the Koopa King, Bowser. To do so, he enlists the help of the Mushroom Kingdom's Princess Peach and his friends Toad and Donkey Kong.",
             "rate": 7.1,
-            "releaseDate": "Apr/05/2023"
+            "releaseDate": "04/05/2023"
         },
         {
             "id": 17,
-            "title": "Pantera Negra",
+            "title": "Black Panther",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/pantera-negra.jpg?raw=true",
             "synopsis": "T'Challa, heir to the hidden but advanced kingdom of Wakanda, must step forward to lead his people into a new future and must confront a challenger from his country's past.",
             "rate": 7.3,
-            "releaseDate": "Feb/15/2018"
+            "releaseDate": "02/15/2018"
         },
         {
             "id": 18,
-            "title": "Harry Potter e as Relíquias da Morte: Parte 2",
+            "title": "Harry Potter and the Deathly Hallows – Part 2",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/harry-potter-reliquias-da-morte-2.jpg?raw=true",
             "synopsis": "Harry, Ron, and Hermione must escape Voldemort and try to work together to locate and destroy the Horcruxes, the sources of his immortality.",
             "rate": 8.1,
-            "releaseDate": "Jul/15/2011"
+            "releaseDate": "07/15/2011"
         },
         {
             "id": 19,
-            "title": "Star Wars Episodio VIII: Os Últimos Jedi",
+            "title": "Star Wars: The Last Jedi",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/star-wars-ultimo-jedi.png?raw=true",
             "synopsis": "Rey develops her abilities with the help of Luke Skywalker, while the Resistance prepares for battle with the First Order.",
             "rate": 6.9,
-            "releaseDate": "Dec/13/2017"
+            "releaseDate": "12/13/2017"
         },
         {
             "id": 20,
-            "title": "Jurassic World: Reino Ameaçado",
+            "title": "Jurassic World: Fallen Kingdom",
             "image": "https://github.com/alura-cursos/movie-api/blob/main/images/jurassic-world-reino-ameacado.jpg?raw=true",
             "synopsis": "Three years after the closure of Jurassic Park, a volcano on the brink of eruption threatens life on Isla Nublar. Claire recruits Owen to return to the island with her.",
             "rate": 6.1,
-            "releaseDate": "Jun/21/2018"
+            "releaseDate": "06/21/2018"
         }
     
     ]
