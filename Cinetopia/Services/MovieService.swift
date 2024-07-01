@@ -17,9 +17,9 @@ struct MovieService {
     func getMovies() async throws -> [Movie] {
         
                
-        let urlString = "http://localhost:3000/movies" 
+        //let urlString = "http://localhost:3000/movies"
         // or
-        //let urlString = "https://my-json-server.typicode.com/alura-cursos/movie-api/movies"
+        let urlString = "https://my-json-server.typicode.com/alura-cursos/movie-api/movies"
         guard let url = URL(string: urlString) else {
             throw MovieServiceError.invalidURL
         }

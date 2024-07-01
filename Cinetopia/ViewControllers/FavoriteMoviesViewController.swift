@@ -31,6 +31,7 @@ class FavoriteMoviesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
         view.backgroundColor = .background
         setupConstraints()
         
@@ -70,7 +71,17 @@ extension FavoriteMoviesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        <#code#>
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FavoriteMovieCollectionViewCell", for: indexPath) as? FavoriteCollectionReusableView else {
+                fatalError("error to create collectionView header")
+            }
+            
+            headerView.setupTitle("My favorite movies")
+            
+            return headerView
+        }
+        
+        return UICollectionReusableView()
     }
 }
 

@@ -20,6 +20,7 @@
 		F05993CE2C2AFF2500FA1D3B /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */; };
 		F06873212C2C4BD7000E69E7 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06873202C2C4BD7000E69E7 /* MovieDetailsViewController.swift */; };
 		F08285BB2C29B25B00373125 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08285BA2C29B25B00373125 /* Movie.swift */; };
+		F0E251672C3242560044B5F1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E251662C3242560044B5F1 /* TabBarController.swift */; };
 		F0EEB9572C2DC72500297433 /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEB9562C2DC72500297433 /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		F05993CD2C2AFF2500FA1D3B /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		F06873202C2C4BD7000E69E7 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		F08285BA2C29B25B00373125 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		F0E251662C3242560044B5F1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F0EEB9562C2DC72500297433 /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 				F02991612C25CE3500CCFAFF /* MoviesViewController.swift */,
 				F06873202C2C4BD7000E69E7 /* MovieDetailsViewController.swift */,
 				F05351692C30AA65008E72FA /* FavoriteMoviesViewController.swift */,
+				F0E251662C3242560044B5F1 /* TabBarController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				F06873212C2C4BD7000E69E7 /* MovieDetailsViewController.swift in Sources */,
 				480C2CDE2AF089A900E8C875 /* SceneDelegate.swift in Sources */,
 				F02991622C25CE3500CCFAFF /* MoviesViewController.swift in Sources */,
+				F0E251672C3242560044B5F1 /* TabBarController.swift in Sources */,
 				F0EEB9572C2DC72500297433 /* MovieService.swift in Sources */,
 				F08285BB2C29B25B00373125 /* Movie.swift in Sources */,
 			);
