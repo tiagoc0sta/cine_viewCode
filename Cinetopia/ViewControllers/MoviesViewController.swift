@@ -43,7 +43,11 @@ class MoviesViewController: UIViewController {
         Task {
             await fetchMovies()
         }
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
     
     private func fetchMovies() async {
@@ -98,6 +102,7 @@ extension MoviesViewController: UITableViewDataSource, UITableViewDelegate{
             as? MovieTableViewCell {
             let movie = isSearchActive ? filteredMovies[indexPath.row] : movies[indexPath.row]
             cell.configureCell(movie: movie)
+            cell.delegate = self
             cell.selectionStyle = .none
             return cell
         }
@@ -131,5 +136,26 @@ extension MoviesViewController: UISearchBarDelegate {
             })
         }
         tableView.reloadData()
+    }
+}
+
+extension MoviesViewController: MovieTableViewCellDelegate {
+    func didSelectFavoriteButton(sender: UIButton) {
+        guard let cell = sender.superview?.superview as? MovieTableViewCell else {
+            return
+        }
+        
+        guard let indePath = tableView.indexPath(for: cell) else {
+            return
+        }
+        
+        let selectedMovie = movies[indePath.row]
+        selectedMovie.changeSelectionStatus()
+        
+        MovieManager.shared.add(selectedMovie)
+        tableView.reloadRows(at: [indePath], with: .automatic)
+        
+        
+                 
     }
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class FavoriteMoviesViewController: UIViewController {
     
-    //MARK: UI - Components
+    // MARK: - UI Components
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,28 +18,30 @@ class FavoriteMoviesViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(FavoriteMovieCollectionViewCell.self, forCellWithReuseIdentifier: "FavoriteMovieCollectionViewCell")
-        collectionView.register(FavoriteCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FavoriteMovieCollectionViewCell")
+        collectionView.register(FavoriteCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FavoriteCollectionReusableView")
         collectionView.dataSource = self
         collectionView.delegate = self
         
         return collectionView
     }()
     
-    //MARK: UI - View life cycle
-    
-    
+    // MARK: - View life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: true)
         view.backgroundColor = .background
         setupConstraints()
-        
     }
     
-    //MARK: - Class methods
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.reloadData()
+    }
     
-    private func setupConstraints(){
+    // MARK: - Class methods
+    
+    private func setupConstraints() {
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -47,7 +49,6 @@ class FavoriteMoviesViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
     }
     
 }
@@ -55,28 +56,28 @@ class FavoriteMoviesViewController: UIViewController {
 extension FavoriteMoviesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return MovieManager.shared.favoriteMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteMovieCollectionViewCell", for: indexPath) as?
-                FavoriteMovieCollectionViewCell else {
-            fatalError("Error to create FavoriteMovieCollectionViewCell")
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FavoriteMovieCollectionViewCell", for: indexPath) as? FavoriteMovieCollectionViewCell else {
+            fatalError("error to create FavoriteMovieCollectionViewCell")
         }
         
-        let currentMovie = movies[indexPath.item]
+        let currentMovie = MovieManager.shared.favoriteMovies[indexPath.item]
         cell.setupView(currentMovie)
+        cell.delegate = self
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
-            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FavoriteMovieCollectionViewCell", for: indexPath) as? FavoriteCollectionReusableView else {
-                fatalError("error to create collectionView header")
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FavoriteCollectionReusableView", for: indexPath) as? FavoriteCollectionReusableView else {
+                fatalError("error to create collectionview header")
             }
             
-            headerView.setupTitle("My favorite movies")
+            headerView.setupTitle("Meus filmes favoritos")
             
             return headerView
         }
@@ -95,6 +96,29 @@ extension FavoriteMoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-#Preview {
-  FavoriteMoviesViewController()
+extension FavoriteMoviesViewController: FavoriteMovieCollectionViewCellDelegate {
+    func didSelectFavoriteButton(_ sender: UIButton) {
+        
+        guard let cell = sender.superview as? FavoriteMovieCollectionViewCell else {
+            return
+        }
+        
+        guard let indexPath = collectionView.indexPath(for: cell) else {
+            return
+        }
+        
+        let selectedMovie = MovieManager.shared.favoriteMovies[indexPath.item]
+        selectedMovie.changeSelectionStatus()
+        MovieManager.shared.remove(selectedMovie)
+        
+        collectionView.reloadData()
+                
+    }
+    
 }
+
+#Preview {
+    FavoriteMoviesViewController()
+}
+
+

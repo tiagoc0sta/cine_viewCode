@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  Cinetopia
 //
-//  Created by Giovanna Moeller on 30/10/23.
+//  Created by Tiago de Freitas Costa on 2024-06-25.
 //
 
 import UIKit
