@@ -13,6 +13,7 @@
 		480C2CE52AF089AA00E8C875 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 480C2CE42AF089AA00E8C875 /* Assets.xcassets */; };
 		480C2CE82AF089AA00E8C875 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480C2CE62AF089AA00E8C875 /* LaunchScreen.storyboard */; };
 		A654C91C8E656763EB9EB9EE /* Pods_Cinetopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6CEDD1AEFFFE37B1BEE3302 /* Pods_Cinetopia.framework */; };
+		F007725D2C345CCE00E4AE51 /* MoviesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F007725C2C345CCE00E4AE51 /* MoviesInteractor.swift */; };
 		F01580A92C320662006B814B /* FavoriteCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01580A82C320662006B814B /* FavoriteCollectionReusableView.swift */; };
 		F02991622C25CE3500CCFAFF /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02991612C25CE3500CCFAFF /* MoviesViewController.swift */; };
 		F053516A2C30AA65008E72FA /* FavoriteMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05351692C30AA65008E72FA /* FavoriteMoviesViewController.swift */; };
@@ -38,6 +39,7 @@
 		480C2CE92AF089AA00E8C875 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F29F5E3EDD0FDF0AC233A5C /* Pods-Cinetopia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cinetopia.release.xcconfig"; path = "Target Support Files/Pods-Cinetopia/Pods-Cinetopia.release.xcconfig"; sourceTree = "<group>"; };
 		A6CEDD1AEFFFE37B1BEE3302 /* Pods_Cinetopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cinetopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F007725C2C345CCE00E4AE51 /* MoviesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesInteractor.swift; sourceTree = "<group>"; };
 		F01580A82C320662006B814B /* FavoriteCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionReusableView.swift; sourceTree = "<group>"; };
 		F02991612C25CE3500CCFAFF /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		F05351692C30AA65008E72FA /* FavoriteMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMoviesViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				F08285B92C29B24500373125 /* Models */,
 				F08285B82C29B23000373125 /* Views */,
 				F09CF1FC2C338709006D41E4 /* Presenters */,
+				F007725B2C345CA800E4AE51 /* Interactors */,
 				480C2CDB2AF089A900E8C875 /* AppDelegate.swift */,
 				480C2CDD2AF089A900E8C875 /* SceneDelegate.swift */,
 				480C2CE42AF089AA00E8C875 /* Assets.xcassets */,
@@ -114,6 +117,14 @@
 				A6CEDD1AEFFFE37B1BEE3302 /* Pods_Cinetopia.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F007725B2C345CA800E4AE51 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				F007725C2C345CCE00E4AE51 /* MoviesInteractor.swift */,
+			);
+			path = Interactors;
 			sourceTree = "<group>";
 		};
 		F05993CC2C2AFEC800FA1D3B /* Cells */ = {
@@ -289,6 +300,7 @@
 				F053516A2C30AA65008E72FA /* FavoriteMoviesViewController.swift in Sources */,
 				F053516E2C30CA04008E72FA /* FavoriteMovieCollectionViewCell.swift in Sources */,
 				480C2CE02AF089A900E8C875 /* HomeViewController.swift in Sources */,
+				F007725D2C345CCE00E4AE51 /* MoviesInteractor.swift in Sources */,
 				480C2CDC2AF089A900E8C875 /* AppDelegate.swift in Sources */,
 				F01580A92C320662006B814B /* FavoriteCollectionReusableView.swift in Sources */,
 				F05993CE2C2AFF2500FA1D3B /* MovieTableViewCell.swift in Sources */,

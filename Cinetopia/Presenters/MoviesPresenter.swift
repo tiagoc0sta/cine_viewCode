@@ -16,7 +16,7 @@ protocol MoviesPresenterToViewControllerProtocol: AnyObject {
 protocol MoviesPresenterToViewProtocol: AnyObject {
     func didSelect(movie:Movie)
     func didSelectFavoriteButton(_ movie: Movie)
-    func didSearchText(_ searchBar: UISearchBar, textDidChange searchText: String, _ movies: [Movie], _ filteredMovies: [Movie])
+    func didSearchText(_ searchBar: UISearchBar, textDidChange searchText: String, _ movies: [Movie], _ filteredMovies: inout [Movie])
 }
 
     //MARK: - MoviesPresenterToViewControllerProtocol
@@ -27,12 +27,13 @@ class MoviesPresenter: MoviesPresenterToViewControllerProtocol {
     
     private var controller: MoviesViewControllerToPresenterProtocol?
     private var view: MoviesViewProtocol?
-    private var movieService: MovieService = MovieService()
-    
+    private var interactor: MoviesPresenterToInteractorProtocol?
+        
     //MARK: - Init
     
-    init(view: MoviesViewProtocol) {
+    init(view: MoviesViewProtocol, interactor: MoviesPresenterToInteractorProtocol) {
         self.view = view
+        self.interactor = interactor
     }
     
     //MARK: - MoviesPresenterToViewControllerProtocol
@@ -49,7 +50,7 @@ class MoviesPresenter: MoviesPresenterToViewControllerProtocol {
     }
     
     func viewDidAppear() {
-        
+        view?.reloadData()
     }
     
     //MARK: Class methods
@@ -57,7 +58,7 @@ class MoviesPresenter: MoviesPresenterToViewControllerProtocol {
     private func fetchMovies() async {
         // Call the funtion getMovies when it is ready
         do {
-            let movies = try await movieService.getMovies()
+            guard let movies = try await interactor?.fetchMovies() else { return }
             view?.setupView(with: movies)
             view?.reloadData()
         } catch (let error) {
@@ -68,16 +69,23 @@ class MoviesPresenter: MoviesPresenterToViewControllerProtocol {
 
 extension MoviesPresenter: MoviesPresenterToViewProtocol {
     func didSelect(movie: Movie) {
-        
+        controller?.didSelectMovie(movie)
     }
     
     func didSelectFavoriteButton(_ movie: Movie) {
-        
+        movie.changeSelectionStatus()
+        MovieManager.shared.add(movie)
     }
     
-    func didSearchText(_ searchBar: UISearchBar, textDidChange searchText: String, _ movies: [Movie], _ filteredMovies: [Movie]) {
-        
+    func didSearchText(_ searchBar: UISearchBar, textDidChange searchText: String, _ movies: [Movie], _ filteredMovies: inout [Movie]) {
+        if searchText.isEmpty {
+            view?.toogle(false)
+        } else {
+            filteredMovies = movies.filter { movie in
+                movie.title.lowercased().contains(searchText.lowercased())
+            }
+            view?.toogle(true)
+        }
     }
-    
     
 }
